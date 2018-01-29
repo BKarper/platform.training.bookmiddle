@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: platform.training.bookmiddle
+    version: 1.0.0
+  jackson:
+    default-property-inclusion: non_null
+
+server:
+  port: ${service.port:8080}
+
+swagger:
+  title: BookMiddle Service REST APIs
+  description: This successfully showcased Spring Boot REST API
+  contact:
+    name: Brian Karper
+    url: http://www.ebsco.com
+    email: bkarper@ebsco.com
+  version: 1.0.0
+
+book:
+  includeChildrens: true
+  useStubs: false
+  stubSettings:
+    number: 5
+    staticAuthor: "Author McBook"
+    staticTitle: "Test Book"
+    staticGenre: "Training"
+
+---
+
+spring:
+  profiles: local
+
+book:
+  includeChildrens: false
+  useStubs: true
